@@ -12,7 +12,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
 
-// const routes = require ('../routes/');
+const routes = require ('../routes/');
 
 module.exports = app=>{
 
@@ -40,7 +40,7 @@ module.exports = app=>{
     });
 
     //ROUTES
-    // routes(app);
+    routes(app);
 
     // catch 404 and forward to error handler
     app.use((req,res,next)=>{

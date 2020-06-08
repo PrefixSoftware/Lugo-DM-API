@@ -20,12 +20,6 @@ const http = require('http').createServer(app);
 //
 // ================================================
 
-const server = http.listen(process.env.PORT, () =>{
+http.listen(process.env.PORT, () =>{
   console.log(`Listening on PORT: ${process.env.PORT}`);
-});
-
-const io = require('./socket').init(server);
-
-io.on('connection', socket=>{
-  console.log(`New connection ${socket.id}`);
 });

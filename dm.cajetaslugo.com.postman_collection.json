@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "835d0993-5110-424f-8d3e-1be801c53b67",
+		"name": "dm.cajetaslugo.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dm.cajetaslugo.com/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "CorreoElectronico",
+							"value": "vnarturo@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "Contrasena",
+							"value": "admin@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "dm.cajetaslugo.com/login",
+					"host": [
+						"dm",
+						"cajetaslugo",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dm.cajetaslugo.com/instalaciones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW9FbGVjdHJvbmljbyI6InZuYXJ0dXJvQG91dGxvb2suY29tIiwiaWF0IjoxNTg1MzYxMTAzLCJleHAiOjE1ODUzODk5MDN9.92WtlGImJG1gOZogwV9zP9tv3ZNGMFanHYxvKQKuj_E",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Id_TipoInstalacion",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Nombre",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Descripcion",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "dm.cajetaslugo.com/instalaciones",
+					"host": [
+						"dm",
+						"cajetaslugo",
+						"com"
+					],
+					"path": [
+						"instalaciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dm.cajetaslugo.com/tiposInstalacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW9FbGVjdHJvbmljbyI6InZuYXJ0dXJvQG91dGxvb2suY29tIiwiaWF0IjoxNTg1MzYxMTAzLCJleHAiOjE1ODUzODk5MDN9.92WtlGImJG1gOZogwV9zP9tv3ZNGMFanHYxvKQKuj_E",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Nombre",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Descripcion",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "dm.cajetaslugo.com/tiposInstalacion",
+					"host": [
+						"dm",
+						"cajetaslugo",
+						"com"
+					],
+					"path": [
+						"tiposInstalacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dm.cajetaslugo.com/zonasInstalacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW9FbGVjdHJvbmljbyI6InZuYXJ0dXJvQG91dGxvb2suY29tIiwiaWF0IjoxNTg1MzYxMTAzLCJleHAiOjE1ODUzODk5MDN9.92WtlGImJG1gOZogwV9zP9tv3ZNGMFanHYxvKQKuj_E",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Id_Instalacion",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Nombre",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Descripcion",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "dm.cajetaslugo.com/zonasInstalacion",
+					"host": [
+						"dm",
+						"cajetaslugo",
+						"com"
+					],
+					"path": [
+						"zonasInstalacion"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

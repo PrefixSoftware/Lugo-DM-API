@@ -23,7 +23,7 @@ process.env.PUBLIC_TOKEN_EXPIRY_DATE = process.env.PUBLIC_TOKEN_EXPIRY_DATE || '
 //
 // ================================================
 
-process.env.TOKEN_SEED = process.env.TOKEN_SEED || '(A22@`_?EsCWkb?:JQxfDLu';
+process.env.seed = process.env.seed || '3acef59cad87e9c310b6ad6a2def1accde23894d2b639c1027093e9e8b64eed8';
 
 // ================================================
 //
