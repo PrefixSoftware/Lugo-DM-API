@@ -11,18 +11,18 @@ ctrl.getAll = async(request,response)=>{
 
       let Paises = await pool.query(consulta);
 
-      return request.status(200).json({
-        sttus:'SUCCESS',
+      return response.status(200).json({
+        status:'SUCCESS',
         Paises
       });
 
     } catch (e) {
-      return request.status(204).json({
+      return response.status(204).json({
         status:'FAILED'
       });
     }
   }else{
-    return request.status(400).json({
+    return response.status(400).json({
       status:'FAILED'
     });
   }
@@ -35,8 +35,8 @@ ctrl.getUnique = async(request,response)=>{
 
       let Paises = await pool.query(consulta,Number(request.Id_Pais));
 
-      return request.status(200).json({
-        sttus:'SUCCESS',
+      return response.status(200).json({
+        status:'SUCCESS',
         Paises
       });
 
@@ -46,12 +46,12 @@ ctrl.getUnique = async(request,response)=>{
       }else {
         console.error(e);
       }
-      return request.status(204).json({
+      return response.status(204).json({
         status:'FAILED'
       });
     }
   }else{
-    return request.status(400).json({
+    return response.status(400).json({
       status:'FAILED'
     });
   }

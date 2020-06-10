@@ -36,23 +36,23 @@ let checkToken = async(req, res, next) => {
         let Id_Usuario = await pool.query(consulta,[decoded.Id_Usuario]);
 
         if(Id_Usuario.length === 1){
-          if (decoded.Id_Usuario === req.Id_Usuario) {
+          // if (decoded.Id_Usuario === req.Id_Usuario) {
 
             req.Usuario = {
               Id_Usuario: decoded.Id_Usuario,
               CorreoElectronico: decoded.CorreoElectronico
             }
             next();
-          }else{
-            if(process.env.NODE_ENV==='production'){
-                emailError(`No coinciden dicho Id (${decoded.Id_Usuario})`);
-              }else {
-                console.error(`No coinciden dicho Id (${decoded.Id_Usuario})`);
-              }
-              return res.status(404).json({
-                status:`No coinciden dicho Id (${decoded.Id_Usuario})`
-              });
-          }
+          // }else{
+          //   if(process.env.NODE_ENV==='production'){
+          //       emailError(`No coinciden dicho Id (${decoded.Id_Usuario})`);
+          //     }else {
+          //       console.error(`No coinciden dicho Id (${decoded.Id_Usuario})`);
+          //     }
+          //     return res.status(404).json({
+          //       status:`No coinciden dicho Id (${decoded.Id_Usuario})`
+          //     });
+          // }
         }else{
           if(process.env.NODE_ENV==='production'){
               emailError(`No existe dicho Id (${decoded.Id_Usuario})`);

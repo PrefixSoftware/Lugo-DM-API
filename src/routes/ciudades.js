@@ -1,13 +1,14 @@
 'use strict';
 
-const router = require('express').Router();
-
 const {checkToken} = require('../middlewares/Auth');
 
 const ciudades = require('../controllers/ciudades');
 
-router.get('/paises/:Id_Pais/subdivisiones/:Id_PaisSubdivision/ciudades',checkToken,ciudades.getAll);
+module.exports = router => {
 
-router.get('/paises/:Id_Pais/subdivisiones/:Id_PaisSubdivision/ciudades/:Id_Ciudad',checkToken,ciudades.getUnique);
+  router.get('/paises/:Id_Pais/subdivisiones/:Id_PaisSubdivision/ciudades',checkToken,ciudades.getAll);
 
-module.exports = router;
+  router.get('/paises/:Id_Pais/subdivisiones/:Id_PaisSubdivision/ciudades/:Id_Ciudad',checkToken,ciudades.getUnique);
+
+  return router;
+};

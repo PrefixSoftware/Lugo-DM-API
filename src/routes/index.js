@@ -1,5 +1,7 @@
 'use strict';
 
+const router = require('express').Router({ mergeParams: true});
+
 const login = require('../controllers/login');
 
 const params = require('./params');
@@ -22,17 +24,17 @@ const asentamientos = require('./asentamientos');
 
 module.exports = app =>{
 
-  app.use(params);
+  // tiposInstalacion(app);
+  // instalaciones(app);
+  // zonasInstalacion(app);
 
-  tiposInstalacion(app);
-  instalaciones(app);
-  zonasInstalacion(app);
+  app.use(params(router));
 
-  app.use(paises);
-  app.use(paisSubdivisiones);
-  app.use(ciudades);
-  app.use(codigosPostales);
-  app.use(asentamientos);
+  app.use(paises(router));
+  app.use(paisSubdivisiones(router));
+  app.use(ciudades(router));
+  app.use(codigosPostales(router));
+  app.use(asentamientos(router));
 
   app.post('/login', login.login)
 
