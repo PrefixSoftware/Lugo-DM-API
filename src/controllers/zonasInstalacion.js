@@ -15,7 +15,7 @@ const ctrl ={};
 
 ctrl.get = async(request,response) =>{
   try {
-    const consulta = `SELECT * FROM DM_ZonasInstalacion WHERE RegistroActivo = 1`;
+    const consulta = `SELECT * FROM DM_ZonasInstalacion WHERE EliminadoFechaHora IS NULL`;
 
     const zonasInstalacion = await pool.query(consulta);
 

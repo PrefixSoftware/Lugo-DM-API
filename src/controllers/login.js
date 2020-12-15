@@ -12,7 +12,14 @@ ctrl.login = async (request, response, next)=>{
 
       const password = crypto.createHash('sha256').update(crypto.createHash('sha256').update(body.Contrasena).digest('hex')).digest('hex');
 
-        await pool.query('SELECT U.Id_Usuario, U.CorreoElectronico FROM USR_Usuarios U INNER JOIN USR_Contrasenas P ON U.Id_Usuario = P.Id_Usuario WHERE U.CorreoElectronico = ? AND P.Contrasena = ? AND U.EliminadoFechaHora IS NULL AND P.EliminadoFechaHora IS NULL LIMIT 1', [body.CorreoElectronico, password], (error, rows, fields) => {
+      let consulta = `SELECT * FROM DM_PersonaInfo_View
+              INNER JOIN USR_Contrasenas c
+              ON DM_PersonaInfo_View.Id_Usuario = c.Id_Usuario
+              WHERE DM_PersonaInfo_View.CorreoElectronico = ?
+              AND c.Contrasena = ?
+              AND c.EliminadoFechaHora IS NULL LIMIT 1`
+
+        await pool.query(consulta, [body.CorreoElectronico, password], (error, rows, fields) => {
             if (error) {
                 return response.status(500).json({
                     error: `ERROR DATABASE -> ${error}`
@@ -28,8 +35,7 @@ ctrl.login = async (request, response, next)=>{
                     CorreoElectronico: rows[0].CorreoElectronico
                 }
                 return response.status(200).json({
-                    Id_Usuario: rows[0].Id_Usuario,
-                    CorreoElectronico: rows[0].CorreoElectronico,
+                    Usuario:Usuario[0],
                     token: token
                 });
             } else {
